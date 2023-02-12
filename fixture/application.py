@@ -21,5 +21,10 @@ class Application:
         self.driver.get(link)
         self.driver.set_window_size(1936, 1056)
 
+    def adding_to_cart(self):
+        self.driver.find_element(By.CSS_SELECTOR, "body > div.master-wrapper-page > div.master-wrapper-content > div.master-wrapper-main > div.center-3 > div > div > div.product-grid.home-page-product-grid > div:nth-child(2) > div > div.picture > a > img").click()
+        self.driver.find_element(By.CSS_SELECTOR, "#addtocart_2_EnteredQuantity").send_keys("20")
+        self.driver.find_element(By.CSS_SELECTOR, "#add-to-cart-button-2").click()
+
     def destroy(self):
         self.driver.quit()
